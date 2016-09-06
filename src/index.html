@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Arrecadar</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500">
+		<link rel="stylesheet" href="assets/styles/main.min.css">
+	</head>
+	<body>
+		<header class="header">
+			<nav class="container header-content">
+				<a class="logo" href="">
+					<img src="assets/images/logo.png" alt="Arrecadar">
+				</a>
+
+				<div class="icon-hamburguer-content">
+					<label for="hamburguer" class="icon-hamburguer">
+			      <span class="lines line-top"></span>
+			      <span class="lines line-mid"></span>
+			      <span class="lines line-bottom"></span>
+			    </label>
+				</div><!-- /.icon-hamburguer-content -->
+
+				<input id="hamburguer" type="checkbox">
+				<div class="navigation-content">
+					<ul class="navigation-list">
+						<li class="navigation-item"><a class="navigation-link" href="#home">Home</a></li>
+						<li class="navigation-item"><a class="navigation-link" href="#about">Sobre</a></li>
+						<li class="navigation-item"><a class="navigation-link" href="#questions">Dúvidas</a></li>
+						<li class="navigation-item"><a class="navigation-link" href="#contact">Contato</a></li>
+						<li class="navigation-item"><a class="navigation-button" href="#sign">Criar campanha</a></li>
+					</ul><!-- /.navigation-list -->
+				</div><!-- /.navigation-content -->
+			</nav><!-- /.container -->
+		</header><!-- /.header-content -->
+
+		<main>
+			<section class="home">
+				<div class="container">
+					<h1 class="title">Encontre a campanha mais próxima de, alimentos.</h1>
+					<a class="button" href="">Encontrar uma campanha</a>
+				</div>
+			</section>
+
+			<section class="filter">
+				<form class="container">
+					<div class="input">
+						<input type="text" required>
+						<hr>
+						<label class="label">Informe sua cidade</label>
+					</div>
+
+					<div class="input">
+						<input type="text" required>
+						<hr>
+						<label class="label">Tipo da campanha</label>
+					</div>
+
+					<input class="submit" type="submit" value="Procurar">
+				</form>
+			</section>
+
+			<section class="map"></section>
+			
+			<section class="about"></section>
+			<section class="questions"></section>
+			<section class="contact"></section>
+		</main>
+
+		<footer class="footer"></footer>
+	</body>
+</html>		

@@ -1,0 +1,23 @@
+.home
+    background-image url('../images/background.png')
+    width: 100%
+    min-height 100vh
+    position relative
+
+    .container
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        text-align center
+
+        .title
+            font-size 36px
+            color $c-white
+            font-family $f-primary
+            font-weight 300
+
+        .button
+            margin-top 25px
+            display inline-block
+            button($c-primary, $c-white, 30px, 15px, 18px)
