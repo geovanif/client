@@ -10,7 +10,7 @@
      
       $mdThemingProvider
         .theme('default')
-          .primaryPalette('red')
+          .primaryPalette('blue')
           .accentPalette('orange');
     };
 })();

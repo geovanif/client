@@ -19,6 +19,8 @@
         controller: AbstractController,
         template: '<ui-view/>'
       });
+
+    $urlRouterProvider.otherwise('/');
   };
 
   function AbstractController(){

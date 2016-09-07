@@ -10,5 +10,6 @@
       , 'UserModule'
       , 'ConfigModule'
       , 'ConfigThemeModule'
+      , 'AngularFacadeConfig'
     ]);
 })();

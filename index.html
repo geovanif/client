@@ -8,12 +8,10 @@
     <!-- endbower -->
   </head>
   <body data-ng-controller="IndexController as vm">
-    <ui-view>
-    <ui-view/>
 
     <md-nav-bar md-selected-nav-item="currentNavItem">
       <md-nav-item md-nav-click="goto('page1')" name="page1">Page One</md-nav-item>
-      <md-nav-item md-nav-sref="app.page2" name="page2">Page Two</md-nav-item>
+      <md-nav-item md-nav-sref="app.user-create" name="page2">Page Two</md-nav-item>
       <md-nav-item md-nav-href="#page3" name="page3">Page Three</md-nav-item>
     </md-nav-bar>
 
@@ -33,7 +31,7 @@
         </md-content>
       </md-sidenav>
       <md-content flex layout-padding>
-        <div layout="column" layout-align="top center">
+        <!--<div layout="column" layout-align="top center">
           <p>
             Developers can also disable the backdrop of the sidenav.<br/>
             This will disable the functionality to click outside to close the sidenav.
@@ -43,10 +41,15 @@
               Toggle Sidenav
             </md-button>
           </div>
-        </div>
+        </div>-->
       </md-content>
     </section>
     
+    <!--<div ui-view></div>-->
+    <ui-view>
+
+    </ui-view>
+
   </body>
   <!-- bower:js -->
   <script src="src/lib/angular/angular.js"></script>
@@ -64,6 +67,7 @@
   <script src="src/modules/config/config.module.js"></script>
   <script src="src/modules/config/config.routes.js"></script>
   <script src="src/modules/config/config.theme.js"></script>
+  <script src="src/modules/config/config.angular-facade.js"></script>
   <!-- USER MODULE -->
   <script src="src/modules/user/user.module.js"></script>
   <script src="src/modules/user/user.controllers.js"></script>
