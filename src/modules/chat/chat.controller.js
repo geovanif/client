@@ -26,9 +26,10 @@
       return ChatService.getMessages();
     };
     
-    ChatController.$inject = ['ChatService', 'messages'];
-    function ChatController(ChatService, messages) {
+    ChatController.$inject = ['ChatService', 'messages','AuthenticationService'];
+    function ChatController(ChatService, messages, AuthenticationService) {
       var vm = this;
+      console.log(' {} ',AuthenticationService.getUser());
       vm.messages = messages;
       vm.getPosition = getPosition;
       vm.postMessage = postMessage;

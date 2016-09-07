@@ -26,12 +26,12 @@
   AbstractController.$inject = ['$rootScope', 'AuthenticationService'];
   function AbstractController($rootScope, AuthenticationService){
 
-    AuthenticationService.validateToken();
+    //AuthenticationService.validateToken();
     
     $rootScope.$on('$stateChangeStart', stateChangeStart);
 
     function stateChangeStart(event, toState, toParams, fromState, fromParams, options){ 
-       AuthenticationService.validateToken();
+       //AuthenticationService.validateToken();
     };
 
   };

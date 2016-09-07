@@ -21,20 +21,17 @@
     function UserLoginController(AuthenticationService, message, $state){
     	var vm = this;
     	vm.login = login;
-    	function login(){
-
- 				 message.pop('Bem vinda.');
-
-         AuthenticationService.setToken('dsadasdas');
-
-         $state.go('app.chat');
-         
-    		/**
-         *  AuthenticationService
-    			.login(vm.mae)
-    			.then(function(response){
-    				message.pop('Bem vinda.');
-    			});*/
+    	function login(usuario){
+    		AuthenticationService
+          .login({username:usuario.email,password:usuario.senha},function(response){
+            if(!response){
+              return;
+            }
+            AuthenticationService.saveUser(response);
+            $state.go('app.chat');
+          },function(err){
+            console.log('ERR ', err)
+          })
     	};			
     };
 })();

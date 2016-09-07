@@ -8,73 +8,34 @@
     AuthenticationService.$inject = ['$cookies', '$http', '$state'];
     function AuthenticationService($cookies, $http, $state){
         var service = {
-            getToken       : getToken,
-            setToken       : setToken,
-            hasToken       : hasToken,
-            login          : login,
-            logOut         : logOut,
-            getContextUser : getContextUser,
-            validateToken  : validateToken
-        },
-        TOKEN_NAME = 'senhoga-token',
-        contextUser;
+          login : login,
+          saveUser : saveUser,
+          getUser : getUser
+        };
+        
         return service;
 
-      function login(user){
-        var method = 'POST'
-        , url = 'http://10.7.8.63:8080/login';
-
-        return getHttp()({
-          url : url,
+      function login(user, callback,callbackErr){
+          var method = 'POST'
+          , url = 'http://localhost:8080/login',
+          data = {
+            username : user.username,
+            password : user.password
+          };
+        $http({
           method : method,
-          data : user
-        }).then(function(response){
-          return response;
-        });
+          url : url,
+          data : data
+        }).then(callback,callbackErr);
       };
 
-      function setToken(newStatus){
-        $cookies.put(TOKEN_NAME, newStatus);
-      };
+      function saveUser(user){
+        $cookies.putObject('user',user.data);
+      }
 
-      function setContextUser(user){
-        $cookies.put('contextUser', contextUser);
-      };
+      function getUser(){
+        return $cookies.getObject('user');
+      }
+    }
 
-      function getContextUser(){
-        return $cookies.get('contextUser');
-      };
-
-      function getToken(){
-        return $cookies.get(TOKEN_NAME);
-      };
-
-      function hasToken(){
-        return angular.isDefined($cookies.get(TOKEN_NAME));
-      };
-
-      function validateToken(){
-        if(!hasToken()){
-          gotToLogin();
-        };
-      };
-
-      function logOut(){
-        destroyCookie();
-        gotToLogin();
-      };
-
-      function destroyCookie(){
-        delete $cookies.get(TOKEN_NAME);
-      };
-
-      function gotToLogin(){
-        $state.go('login');
-      };
-
-      function getHttp() {
-        return $http;
-      };
-    };
-    
 })();
