@@ -9,7 +9,7 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider){
       $stateProvider
-        .state('app.user-create',{
+        .state('user-create', {
           url : '/user/create',
           templateUrl: './src/modules/user/user-create.html',
           controller : 'UserCreateController',

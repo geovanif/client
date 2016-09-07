@@ -5,6 +5,7 @@
     .module('UserModule', [
         'UserControllers'
       , 'UserServices'
+      , 'UserLoginControllers'
     ]);
     
 })();

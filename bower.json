@@ -13,6 +13,7 @@
   "dependencies": {
     "angular": "^1.5.7",
     "ng-material-facade": "https://github.com/marcosflorencio/angular-material-facade.git/#~*",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "angular-cookies": "^1.5.8"
   }
 }
