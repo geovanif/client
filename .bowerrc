@@ -1,1 +1,3 @@
-{"directory":"./src/assets/components"}
+{
+  "directory": "./src/lib"
+}

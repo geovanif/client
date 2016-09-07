@@ -8,3 +8,4 @@ src/assets/styles
 src/assets/scripts/*.min.js
 *.sublime-project
 *.sublime-workspace
+src/lib
