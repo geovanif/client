@@ -8,7 +8,7 @@
 
     config.$inject = ['$stateProvider'];
     
-    function config($stateProvider){
+    function config($stateProvider) {
       $stateProvider
         .state('app.chat',{
           url : '/chat',
@@ -22,19 +22,27 @@
     };
 
     messages.$inject = ['ChatService'];
-    function messages(ChatService){
+    function messages(ChatService) {
       return ChatService.getMessages();
     };
     
-    ChatController.$inject = ['messages'];
-
-    function ChatController(messages){
+    ChatController.$inject = ['ChatService', 'messages'];
+    function ChatController(ChatService, messages) {
       var vm = this;
       vm.messages = messages;
       vm.getPosition = getPosition;
+      vm.postMessage = postMessage;
 
-      function getPosition(message){
+      function getPosition(message) {
         return message.tipo != 'ROBO' ? 'end' : 'none'
+      };
+
+      function postMessage() {
+        ChatService
+          .postMessage(vm.message)
+          .then(function(response) {
+            console.log('enviado')
+          });
       };
     };
 })();

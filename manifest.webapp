@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "name": "Mãe Cegonha",
+  "launch_path": "/index.html",
+  "description": "Mãe Cegonha",
+  "icons": {
+    "128": "images/mae_cegonha_128.png"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "pt-br",
+  "permissions": {
+  },
+  "locales": {
+    "pt-br": {
+      "name": "Mãe Cegonha",
+      "description": "Melhor App para mães"
+    }
+  }
+}

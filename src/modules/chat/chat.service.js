@@ -5,14 +5,16 @@
     .module('ChatServices', [])
     .factory('ChatService', ChatService);
 
-    function ChatService() {
+    ChatService.$inject = ['$http'];
+    function ChatService($http) {
       var service = {
           getMessages : getMessages
         , postMessage : postMessage
       };
+      
       return service;
 
-      function getMessages(){
+      function getMessages() {
         var method = 'POST'
         ,	url = '/app/messages';
 
@@ -47,18 +49,17 @@
         // });
       };
 
-      function postMessage(message){
-        var method = 'POST'
-        ,	url = '/app/messages';
+      function postMessage(message) {
+        var method = 'PUT'
+        ,	url = 'http://10.7.8.63:8080/usuario';
 
         return getHttp()({
           url : url,
           method : method,
           data : {
-              userId : userId
-            , message : message
+            message : message
           }
-        }).then(function(response){
+        }).then(function(response) {
           return response;
         });
       };
