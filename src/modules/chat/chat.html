@@ -1,7 +1,7 @@
 <div class="chat-content">
   <ul class="chat-timeline">
     
-    <div data-ng-repeat="msg in vm.messages  | orderBy:'-dataGeracao'">
+    <div data-ng-repeat="msg in vm.usuario.messages  | orderBy:'dataGeracao'">
         <li class="chat-item" data-ng-class="{ 'from-me' : !vm.isRobo(msg)}">
             <img class="avatar" width="48" height="48" src="{{vm.getImage(msg)}}" alt="">
             <div class="bubble">
@@ -18,17 +18,18 @@
 
 
 <div class="message-input">
-  <form data-ng-submit="vm.postMessage()" class="message-form">
+  <form data-ng-submit="vm.postMessage(vm.message)" class="message-form">
     <div layout="row" flex="20">
-        <md-select data-ng-model="vm.message.text" placeholder="Tipo do evento" class="md-no-underline">
-            <md-option value="especial">Momentos especiais</md-option>
-            <md-option value="consulta">Consulta</md-option>
-            <md-option value="medicamentos">Medicamentos</md-option>
+        <md-select data-ng-model="vm.message.tipo" placeholder="Tipo do evento" class="md-no-underline">
+            <md-option value="EVENTOS_ESPECIAIS">Momentos especiais</md-option>
+            <md-option value="CONSULTA_MÉDICA">Consulta</md-option>
+            <md-option value="REMÉDIOS_MINISTRADOS">Medicamentos</md-option>
+            <md-option value="ANOTAÇÃO">Medicamentos</md-option>
         </md-select>
     </div>
 
     <div layout="row" flex="80">
-        <input type="text" name="message" class="input-message" data-model="vm.message.conteudo" placeholder="Conte-nos um pouco mais como você está">
+        <input type="text" name="message" class="input-message" data-ng-model="vm.message.conteudo" placeholder="Conte-nos um pouco mais como você está">
         <button type="submit">
         <svg viewBox="0 0 24 24">
             <path d="M2 21l21-9L2 3v7l15 2-15 2z"></path>

@@ -18,12 +18,10 @@
       };
 
       function onRequest(config){
-        console.log('config {} ', config);
         return config;
       };
       
       function onResponse(response) {
-        console.log('response {} ', response);
         return response;
       };
       

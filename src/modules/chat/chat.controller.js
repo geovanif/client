@@ -16,24 +16,32 @@
           controller : 'ChatController',
           controllerAs : 'vm',
           resolve : {
-            messages : messages 
+            getUser : getUser 
           }
         });
     };
 
-    messages.$inject = ['ChatService'];
-    function messages(ChatService) {
-      return ChatService.getMessages();
+    getUser.$inject = ['ChatService','AuthenticationService'];
+    function getUser(ChatService, AuthenticationService) {
+      return AuthenticationService.getUser();
     };
     
-    ChatController.$inject = ['ChatService', 'messages','AuthenticationService'];
-    function ChatController(ChatService, messages, AuthenticationService) {
+    ChatController.$inject = ['ChatService', 'getUser','AuthenticationService'];
+    function ChatController(ChatService, getUser, AuthenticationService) {
       var vm = this;
-      console.log(' {} ',AuthenticationService.getUser());
-      vm.messages = messages;
+      vm.usuario = getUser;
       vm.isRobo = isRobo;
       vm.postMessage = postMessage;
       vm.getImage = getImage;
+      vm.postMessage = postMessage;
+      init();
+
+      function init(){
+        vm.message = {
+          tipo : 'ANOTAÇÃO',
+          dataAcontecimento : new Date()
+        }
+      }
 
       function isRobo(message) {
         return message.tipo == 'ROBO';
@@ -46,12 +54,15 @@
         return 'src/images/mae.jpg'
       };
 
-      function postMessage() {
+      function postMessage(message){
+        console.log('>>', message)
         ChatService
-          .postMessage(vm.message)
+          .postMessage(vm.usuario.id,message)
           .then(function(response) {
-
+            console.log('Response', response)
+            vm.usuario = response.data;
           });
-      };
+
+      }
     };
 })();

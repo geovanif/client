@@ -49,14 +49,14 @@
         // });
       };
 
-      function postMessage(message) {
+      function postMessage(id, message) {
         var method = 'PUT'
-        ,	url = 'http://10.7.8.63:8080/usuario';
-
+        ,	url = 'http://localhost:8080/usuario';
         return getHttp()({
           url : url,
           method : method,
           data : {
+            id : id,
             message : message
           }
         }).then(function(response) {
