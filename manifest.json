@@ -1,0 +1,36 @@
+{
+  "name": "Mãe Cegonha",
+  "short_name": "Mãe Cegonha",
+  "icons": [{
+        "src": "images/mae_cegonha_128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      }, {
+        "src": "images/mae_cegonha_152.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      }, {
+        "src": "images/mae_cegonha_144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }, {
+        "src": "images/mae_cegonha_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "images/mae_cegonha_256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "images/mae_cegonha_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3"
+}

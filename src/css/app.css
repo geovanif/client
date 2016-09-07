@@ -23,6 +23,318 @@
   }
 }
 
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto Regular"), local("Roboto-Regular"), url("/static/fonts/roboto.woff") format("woff")
+}
+
+md-icon[md-font-icon] {
+    width: 100%;
+    text-align: left; 
+    margin-left: 15px;
+    outline: none;
+}
+
+.icon-external {
+    line-height: 49px;
+    display: block;
+    color: rgb(33,150,243);
+}
+
+.nav-item {
+    display: block;
+    width: 100%;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(33,150,243);
+}
+
+.icon-external,
+.icon-internal { cursor: pointer; }
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: roboto, sans-serif;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+button:-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+button {
+    cursor: pointer
+}
+
+.layout {
+    display: flex;
+    height: 100%;
+    flex-flow: column
+}
+
+.chat-content {
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch
+}
+
+.toolbar {
+    position: relative;
+    z-index: 1;
+    background: #9C27B0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.4)
+}
+
+.toolbar h1 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    margin-left: 16px;
+    color: #fff
+}
+
+.toolbar .logout {
+    font-family: roboto;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    background: none;
+    padding: 10px 0;
+    margin: 0 16px 0 auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: none;
+}
+
+.message-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.message-form {
+    background: #fff;
+    border-top: 1px solid #c1c1c1;
+    display: flex
+}
+
+.message-form input {
+    flex: 1;
+    background: #fff;
+    font-size: 1rem;
+    font-family: roboto, sans-serif;
+    padding: 13px;
+    border: none;
+    margin: 0;
+    cursor: text
+}
+
+.message-form input:focus {
+    outline: none
+}
+
+.message-form button {
+    fill: #adadad;
+    border: none;
+    background: none;
+    padding: 0 6px 0 0;
+    margin: 0 0 0 auto;
+    width: 34px;
+    box-sizing: content-box
+}
+
+.message-form button:focus {
+    outline: none;
+    fill: #000
+}
+
+.message-form button svg {
+    width: 100%;
+    height: 100%
+}
+
+.chat-timeline {
+    margin: 0;
+    padding: 0
+}
+
+.chat-item {
+    display: flex;
+    margin: 9px 8px
+}
+
+.chat-item .avatar {
+    border-radius: 500px;
+    margin-right: 6px;
+    min-width: 48px
+}
+
+.chat-item p {
+    margin: 0;
+    word-wrap: break-word;
+    font-size: 28px
+}
+
+.chat-item .bubble {
+    padding: 7px 10px;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 420px;
+    min-width: 80px
+}
+
+.chat-item .bubble::before {
+    content: '';
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    top: 0;
+    left: -10px
+}
+
+.chat-item .bubble .meta {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 3px
+}
+
+.chat-item.from-me {
+    justify-content: flex-end
+}
+
+.chat-item.from-me .avatar {
+    order: 1;
+    margin: 0;
+    margin-left: 6px
+}
+
+.chat-item.from-me .bubble {
+    background: #F9D7FF
+}
+
+.chat-item.from-me .bubble::before {
+    left: 100%;
+    border-width: 10px 10px 0 0;
+    border-color: #F9D7FF transparent transparent transparent
+}
+
+.chat-item .state {
+    display: none
+}
+
+.chat-item.sending .state {
+    display: block
+}
+
+.chat-item.sending time {
+    display: none
+}
+
+.global-warning {
+    display: none;
+    padding: 10px 16px;
+    background: #F9F99C
+}
+
+.global-warning.active {
+    display: block
+}
+
+.keyboard {
+    display: none;
+    flex-flow: column;
+    height: 283px;
+    background: #eceff1;
+    max-height: 50vh
+}
+
+@media (min-height: 700px) {
+    .keyboard {
+        height: 311px
+    }
+}
+
+.keyboard .keys {
+    flex: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: flex-start;
+    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    border-top: 1px solid #f6f7f8;
+    -webkit-overflow-scrolling: tou
+ ch
+}
+
+.keyboard .keys.render-all button {
+    display: block
+}
+
+.keyboard .tools {
+    display: flex;
+    flex-flow: row
+}
+
+.keyboard .categories {
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    background: #e4e7e9
+}
+
+.keyboard .tools button,
+.keyboard .keys button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    fill: #b0b6bb
+}
+
+.keyboard .tools button:focus,
+.keyboard .tools button.active,
+.keyboard .keys button:focus,
+.keyboard .keys button.active {
+    outline: none;
+    fill: #37474f
+}
+
+.keyboard .tools button svg,
+.keyboard .keys button svg {
+    width: 100%;
+    height: 100%
+}
+
 .keyboard .keys button {
     display: none;
     width: 57px;

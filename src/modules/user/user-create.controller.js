@@ -23,7 +23,7 @@
 
       vm.save = save;
       
-      function save(){
+      function save() {
         UserService
           .save(vm.mae)
           .then(function(response){
@@ -31,6 +31,5 @@
             message.pop('Cadastro realizado com sucesso');
           });
       };
-
     };
 })(); 

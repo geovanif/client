@@ -1,15 +1,14 @@
 <div class="chat-content">
     <ul class="chat-timeline">
-        <li class="chat-item" data-id="5192767730876416">
-            <img class="avatar" width="48" height="48" src="https://www.gravatar.com/avatar/581ad3d75777571774b271b7e95932cf?d=retro&amp;s=48" srcset="https://www.gravatar.com/avatar/581ad3d75777571774b271b7e95932cf?d=retro&amp;s=96 2x, https://www.gravatar.com/avatar/581ad3d75777571774b271b7e95932cf?d=retro&amp;s=144 3x" alt="User">
+        <li class="chat-item">
+            <img class="avatar" width="48" height="48" src="" alt="">
 
             <div class="bubble">
-                <p>Teste</p>
+                <p>vm.message</p>
                 
                 <div class="meta">
                     <div class="state">Enviando</div>
-
-                    <time class="posted-date" datetime="2016-09-06T07:50:59.790Z">Sep 6 04:50</time>
+                    <time class="posted-date">Sep 6 04:50</time>
                 </div>
             </div>
         </li>
@@ -17,8 +16,8 @@
 </div>
 
 <div class="message-input">
-    <form action="/send" method="post" class="message-form">
-        <input type="text" name="message" class="input-message" placeholder="Conte-nos um poco mais como você está" readonly="">
+    <form data-ng-submit="vm.postMessage()" class="message-form">
+        <input type="text" name="message" class="input-message" data-model="vm.message" placeholder="Conte-nos um pouco mais como você está">
 
         <button type="submit">
             <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"></path></svg>

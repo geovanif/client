@@ -11,21 +11,21 @@
   <body data-ng-controller="IndexController as vm">
 
     <md-nav-bar md-selected-nav-item="currentNavItem">
-      <!--<md-button ng-click="vm.toggleLeft()" class="md-raised"></md-button>-->
-      <md-icon md-font-icon="classname" ng-click="vm.toggleLeft()"/>
+      <md-icon class="menu-external" md-font-icon="menu" ng-click="vm.toggleLeft()"/>
+      <i class="icon-external material-icons">&#xE5D2;</i>
     </md-nav-bar>
 
     <section layout="row" flex>
       <md-sidenav class="md-sidenav-left" md-component-id="left"
         md-disable-backdrop md-whiteframe="4">
         <md-toolbar class="md-theme-indigo">
-          <!--<h1 class="md-toolbar-tools">Disabled Backdrop</h1>-->
+          <md-icon class="menu-internal" md-font-icon="menu" ng-click="vm.toggleLeft()"/>
+          <i class="icon-internal material-icons">&#xE5D2;</i>
         </md-toolbar>
         <md-content layout-margin>
-          <p>
-            This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-          </p>
-          <md-button ng-click="vm.toggleLeft()" class="md-accent">Fecha</md-button>
+          <a class="nav-item">Chat</a>
+          <a class="nav-item">Configurações</a>
+          <a class="nav-item">Sair</a>
         </md-content>
       </md-sidenav>
       
