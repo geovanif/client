@@ -8,6 +8,7 @@
       , 'MaterialFacade'
       , 'ui.router'
       , 'UserModule'
+      , 'ChatModule'
       , 'ConfigModule'
       , 'ConfigThemeModule'
       , 'AngularFacadeConfig'
