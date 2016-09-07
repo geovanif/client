@@ -31,18 +31,26 @@
       var vm = this;
       console.log(' {} ',AuthenticationService.getUser());
       vm.messages = messages;
-      vm.getPosition = getPosition;
+      vm.isRobo = isRobo;
       vm.postMessage = postMessage;
+      vm.getImage = getImage;
 
-      function getPosition(message) {
-        return message.tipo != 'ROBO' ? 'end' : 'none'
+      function isRobo(message) {
+        return message.tipo == 'ROBO';
+      };
+
+      function getImage(message){
+        if(isRobo(message)){
+          return 'src/images/baby.jpg'
+        };
+        return 'src/images/mae.jpg'
       };
 
       function postMessage() {
         ChatService
           .postMessage(vm.message)
           .then(function(response) {
-            console.log('enviado')
+
           });
       };
     };

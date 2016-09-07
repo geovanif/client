@@ -3,6 +3,9 @@
   <head>
     <title>Start</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- bower:css -->
     <link rel="stylesheet" href="src/lib/angular-material/angular-material.css" />
     <!-- endbower -->
@@ -18,12 +21,12 @@
     <section layout="row" flex>
       <md-sidenav class="md-sidenav-left" md-component-id="left"
         md-disable-backdrop md-whiteframe="4">
-        <md-toolbar class="md-theme-indigo">
+        <md-toolbar class="nav-top md-theme-indigo">
           <md-icon class="menu-internal" md-font-icon="menu" ng-click="vm.toggleLeft()"/>
           <i class="icon-internal material-icons">&#xE5D2;</i>
         </md-toolbar>
-        <md-content layout-margin>
-          <a class="nav-item">Chat</a>
+        <md-content class="nav" layout-margin>
+          <a class="nav-item">Linha do tempo</a>
           <a class="nav-item">Configurações</a>
           <a class="nav-item">Sair</a>
         </md-content>
