@@ -11,9 +11,8 @@
   <body data-ng-controller="IndexController as vm">
 
     <md-nav-bar md-selected-nav-item="currentNavItem">
-      <md-nav-item md-nav-click="goto('page1')" name="page1">Page One</md-nav-item>
-      <md-nav-item md-nav-sref="app.user-create" name="page2">Page Two</md-nav-item>
-      <md-nav-item md-nav-href="#page3" name="page3">Page Three</md-nav-item>
+      <!--<md-button ng-click="vm.toggleLeft()" class="md-raised"></md-button>-->
+      <md-icon md-font-icon="classname" ng-click="vm.toggleLeft()"/>
     </md-nav-bar>
 
     <section layout="row" flex>
@@ -26,24 +25,11 @@
           <p>
             This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
           </p>
-          <md-button ng-click="vm.toggleLeft()" class="md-accent">
-            Close this Sidenav
-          </md-button>
+          <md-button ng-click="vm.toggleLeft()" class="md-accent">Fecha</md-button>
         </md-content>
       </md-sidenav>
-      <md-content flex layout-padding>
-        <!--<div layout="column" layout-align="top center">
-          <p>
-            Developers can also disable the backdrop of the sidenav.<br/>
-            This will disable the functionality to click outside to close the sidenav.
-          </p>
-          <div>
-            <md-button ng-click="vm.toggleLeft()" class="md-raised">
-              Toggle Sidenav
-            </md-button>
-          </div>
-        </div>-->
-      </md-content>
+      
+      <md-content flex layout-padding></md-content>
     </section>
     
     <!--<div ui-view></div>-->
@@ -82,9 +68,11 @@
   <script src="src/modules/chat/chat.service.js"></script>
   <script src="src/modules/chat/chat.controller.js"></script>
 
-  <script src="src/app.module.js"></script>
-  <script src="index.controller.js"></script>
   <!-- MESSAGE MODULE -->
   <script src="src/modules/message/message.module.js"></script>
   <script src="src/modules/message/message.service.js"></script>
+  
+  <!-- START -->
+  <script src="src/app.module.js"></script>
+  <script src="index.controller.js"></script>
 </html>
