@@ -1,15 +1,15 @@
 (function() {
-  'use strict'
+  'use strict';
 
   angular
     .module('ChatService', [])
-    .factory('ChatService', ChatService)
+    .factory('ChatService', ChatService);
 
     function ChatService() {
       var service = {
 
-      }
+      };
  
-      return service
+      return service;
     }
-})()
+})();
