@@ -23,6 +23,8 @@
   }
 }
 
+.md-content { overflow: hidden; }
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
@@ -45,10 +47,21 @@ md-icon[md-font-icon] {
 
 .nav-item {
     display: block;
-    width: 100%;
     margin: 0;
     text-decoration: none;
-    color: rgb(33,150,243);
+    color: rgb(33, 150, 243);
+    border-bottom: 1px solid rgb(33, 150, 243);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.nav-top {
+    overflow: hidden;
+}
+
+.nav { 
+    margin: 0;
+    overflow: hidden;
 }
 
 .icon-external,
