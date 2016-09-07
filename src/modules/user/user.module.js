@@ -3,7 +3,8 @@
 
   angular
     .module('UserModule', [
-      'UserControllers'
+        'UserControllers'
+      , 'UserServices'
     ]);
     
 })();

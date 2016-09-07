@@ -11,5 +11,6 @@
       , 'ConfigModule'
       , 'ConfigThemeModule'
       , 'AngularFacadeConfig'
+      , 'MessageModule'
     ]);
 })();

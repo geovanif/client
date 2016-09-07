@@ -17,8 +17,19 @@
         });
     };
     
-    UserCreateController.$inject = [];
-    function UserCreateController(){
+    UserCreateController.$inject = ['message', 'UserService'];
+    function UserCreateController(message, UserService){
+      var vm = this;
+
+      vm.save = save;
+      
+      function save(){
+        UserService
+          .save(vm.mae)
+          .then(function(response){
+            message.pop('Cadastro realizado com sucesso');
+          });
+      };
 
     };
 })(); 

@@ -10,11 +10,32 @@
   </md-card-header>
   <md-card-content>
     
-    <form data-ng-submit="vm.save()">
-      <input-text name="nome" is-required="true" model="vm.mae.nome" label="Nome" md-class="md-block"></input-text>
-      <input-text name="sobrenome" is-required="true" model="vm.mae.sobrenome" label="Sobrenome" md-class="md-block"></input-text>
-      <input-email name="email" is-required="true" model="vm.mae.email" label="Seu email" md-class="md-block"></input-email>
-      <input-text name="senha" is-required="true" model="vm.mae.senha" label="Escolha uma senha" md-class="md-block"></input-text>
+    <form data-ng-submit="vm.save()" name="userForm">
+      <div layout="row" layout-wrap>
+        <div flex=40>
+          <input-text name="nome" is-required="true" model="vm.mae.nome" label="Nome" md-class="md-block"></input-text>
+        </div>
+        <div flex=60>
+          <input-text name="sobrenome" is-required="true" model="vm.mae.sobrenome" label="Sobrenome" md-class="md-block"></input-text>
+        </div>
+        <div flex=100>
+          <input-email name="email" is-required="true" model="vm.mae.email" label="Seu email" md-class="md-block"></input-email>
+        </div>
+        <div flex=60>
+          <md-input-container class="md-block">
+            <label>Senha</label>
+            <input type="password" required name="password" data-ng-model="vm.mae.senha">
+            <div ng-messages="userForm.password.$error">
+            <div ng-message="required">É necessária uma senha</div>
+            </div>
+          </md-input-container>
+        </div>
+
+
+      </div>
+      <div layout="row"  layout-align="end">
+        <md-button type="submit" class="md-raised md-primary">Salvar</md-button>
+      </div>
     </form>
 
   </md-card-content>
