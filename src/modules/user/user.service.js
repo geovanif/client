@@ -5,11 +5,12 @@
     .module('UserServices', [])
     .factory('UserService', UserService);
 
-    UserService.$inject = ['$http'];
-    function UserService($http) {
+    UserService.$inject = ['$http', '$cookies'];
+    function UserService($http, $cookies) {
       var service = {
-        save : save
-      };
+        save  : save,
+        login : login,
+      }
       return service;
 
       function save(user){
@@ -25,8 +26,21 @@
         });
       };
 
+      function login(user){
+        var method = 'POST'
+        , url = 'http://10.7.8.63:8080/login';
+
+        return getHttp()({
+          url : url,
+          method : method,
+          data : user
+        }).then(function(response){
+          return response;
+        });
+      };
+
       function getHttp() {
         return $http;
-      }
+      };
     };
 })();

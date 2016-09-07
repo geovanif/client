@@ -11,11 +11,11 @@
     $stateProvider
       .state('app', {
         abstract: true,
-        resolve: {
-          resolve : function(){
-            return {};
+          resolve : {
+            isLogadoPreLoading : function(){
+              
+            }
           },
-        },
         controller: AbstractController,
         template: '<ui-view/>'
       });
@@ -23,7 +23,16 @@
     $urlRouterProvider.otherwise('/');
   };
 
-  function AbstractController(){
+  AbstractController.$inject = ['$rootScope', 'AuthenticationService'];
+  function AbstractController($rootScope, AuthenticationService){
+
+    AuthenticationService.validateToken();
+    
+    $rootScope.$on('$stateChangeStart', stateChangeStart);
+
+    function stateChangeStart(event, toState, toParams, fromState, fromParams, options){ 
+       AuthenticationService.validateToken();
+    };
 
   };
 })();

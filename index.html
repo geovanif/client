@@ -32,10 +32,7 @@
       <md-content flex layout-padding></md-content>
     </section>
     
-    <!--<div ui-view></div>-->
-    <ui-view>
-
-    </ui-view>
+    <ui-view></ui-view>
 
   </body>
   <!-- bower:js -->
@@ -49,6 +46,7 @@
   <script src="src/lib/ng-material-facade/src/input-text/input-text.directive.js"></script>
   <script src="src/lib/ng-material-facade/src/input-email/input-email.directive.js"></script>
   <script src="src/lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="src/lib/angular-cookies/angular-cookies.js"></script>
   <!-- endbower -->
 
   <!-- CONFIG MODULE -->
@@ -56,6 +54,12 @@
   <script src="src/modules/config/config.routes.js"></script>
   <script src="src/modules/config/config.theme.js"></script>
   <script src="src/modules/config/config.angular-facade.js"></script>
+
+  <!-- AUTHENTICATION MODULE -->
+  <script src="src/modules/authentication/authentication.module.js"></script>
+  <script src="src/modules/authentication/authentication.interceptor.js"></script>
+  <script src="src/modules/authentication/authentication.service.js"></script>
+  <script src="src/modules/authentication/login.controller.js"></script>
 
   <!-- USER MODULE -->
   <script src="src/modules/user/user.module.js"></script>
