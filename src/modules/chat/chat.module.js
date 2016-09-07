@@ -3,6 +3,7 @@
 
     angular
         .module('ChatModule', [
-            'ChatController'
+              'ChatControllers'
+            , 'ChatServices'
         ]);
 })();

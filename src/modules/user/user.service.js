@@ -14,7 +14,7 @@
 
       function save(user){
         var method = 'POST'
-        ,	url = '/app/cadastrar';
+        ,	url = 'http://10.7.8.63:8080/usuario';
 
         return getHttp()({
           url : url,

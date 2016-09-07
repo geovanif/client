@@ -17,8 +17,8 @@
         });
     };
     
-    UserCreateController.$inject = ['message', 'UserService'];
-    function UserCreateController(message, UserService){
+    UserCreateController.$inject = ['message', 'UserService', '$state'];
+    function UserCreateController(message, UserService, $state){
       var vm = this;
 
       vm.save = save;
@@ -27,6 +27,7 @@
         UserService
           .save(vm.mae)
           .then(function(response){
+            $state.reload();
             message.pop('Cadastro realizado com sucesso');
           });
       };

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('ChatController', [])
+    .module('ChatControllers', [])
     .controller('ChatController', ChatController)
     .config(config);
 
@@ -14,13 +14,27 @@
           url : '/chat',
           templateUrl: './src/modules/chat/chat.html',
           controller : 'ChatController',
-          controllerAs : 'vm'
+          controllerAs : 'vm',
+          resolve : {
+            messages : messages 
+          }
         });
     };
+
+    messages.$inject = ['ChatService'];
+    function messages(ChatService){
+      return ChatService.getMessages();
+    };
     
-    ChatController.$inject = [];
+    ChatController.$inject = ['messages'];
 
-    function ChatController(){
+    function ChatController(messages){
+      var vm = this;
+      vm.messages = messages;
+      vm.getPosition = getPosition;
 
+      function getPosition(message){
+        return message.tipo != 'ROBO' ? 'end' : 'none'
+      };
     };
 })();
