@@ -15,8 +15,8 @@
       return service;
 
       function getMessages() {
-        var method = 'POST'
-        ,	url = '/app/messages';
+        var method = 'GET'
+        ,	url = 'http://10.7.8.63:8080/usuario/';
 
         var response = [
           {
