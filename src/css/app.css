@@ -22,3 +22,67 @@
     width: 750px;
   }
 }
+
+.keyboard .keys button {
+    display: none;
+    width: 57px;
+    height: 57px
+}
+
+.keyboard .keys button:nth-child(-n+42) {
+    display: block
+}
+
+@media (min-width: 800px) {
+    .keyboard .keys button {
+        display: block
+    }
+}
+
+.keyboard .keys button:focus,
+.keyboard .keys button.active {
+    outline: none;
+    background: rgba(0, 0, 0, 0.1)
+}
+
+.keyboard .keys .char {
+    display: flex;
+    width: 57px;
+    height: 57px;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center
+}
+
+.keyboard .tools button {
+    width: 29px;
+    height: 29px;
+    padding: 9px
+}
+
+.keyboard button.del {
+    background: #eceff1;
+    fill: #7f8b8f
+}
+
+.keyboard .space {
+    display: flex;
+    border-top: 2px solid #e4e7e9;
+    justify-content: center
+}
+
+.keyboard .space button {
+    width: 70%;
+    margin: 13px 0;
+    border: none;
+    border-radius: 5px;
+    background: #d1d6d9;
+    color: transparent;
+    height: 24px
+}
+
+.keyboard .space button:focus,
+.keyboard .space button.active {
+    outline: none;
+    background: #7f8b8f
+}
