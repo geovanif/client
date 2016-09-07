@@ -42,21 +42,24 @@ md-icon[md-font-icon] {
 .icon-external {
     line-height: 49px;
     display: block;
-    color: rgb(33,150,243);
+    color: #f55e61;
 }
 
 .nav-item {
     display: block;
     margin: 0;
     text-decoration: none;
-    color: rgb(33, 150, 243);
-    border-bottom: 1px solid rgb(33, 150, 243);
+    color: #f55e61;
+    border-bottom: 1px solid #f55e61;
     padding: 20px;
     cursor: pointer;
 }
 
+.md-button.md-primary.md-raised { background: #f55e61 !important; }
+
 .nav-top {
     overflow: hidden;
+    background: #f55e61 !important;
 }
 
 .nav { 
@@ -88,17 +91,15 @@ tt {
 
 button:-moz-focus-inner {
     border: 0;
-    padding: 0
+    padding: 0;
 }
 
-button {
-    cursor: pointer
-}
+button { cursor: pointer; }
 
 .layout {
     display: flex;
     height: 100%;
-    flex-flow: column
+    flex-flow: column;
 }
 
 .chat-content {
@@ -106,8 +107,10 @@ button {
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
 }
+
+.md-title { font-weight: 600; }
 
 .toolbar {
     position: relative;
@@ -117,7 +120,7 @@ button {
     display: flex;
     align-items: center;
     height: 56px;
-    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.4)
+    box-shadow: 0 0px 11px rgba(0, 0, 0, 0.4);
 }
 
 .toolbar h1 {
